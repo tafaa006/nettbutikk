@@ -5,6 +5,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     background-color: #f4f6f8;
     color: #222;
     line-height: 1.5;
@@ -17,7 +18,7 @@ h1, h2, h3 {
 #logo {
     font-size: 3vh;
     font-weight: bold;
-    color: #1f2a44;
+    color: white;
     text-decoration: none;
 }
 
@@ -30,10 +31,6 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-}
-
-header h1 {
-    margin: 0;
 }
 
 nav {
@@ -70,19 +67,24 @@ section {
     text-align: center;
 }
 
-button, .knapp-lenke {
+button, .knapp-lenke, #produktKjop {
     background-color: #2f6fed;
     color: white;
     border: none;
     padding: 10px 16px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 16px;
     text-decoration: none;
     display: inline-block;
 }
 
-button:hover, .knapp-lenke:hover {
+#produktKjop {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+button:hover, .knapp-lenke:hover, #produktKjop:hover {
     background-color: #1d54c4;
 }
 
@@ -98,16 +100,17 @@ button:hover, .knapp-lenke:hover {
     padding: 8px;
     border: 1px solid #aaa;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .produktliste {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .produkt {
+    width: 220px;
     display: flex;
     flex-direction: column;
     border: 1px solid #ddd;
@@ -123,7 +126,7 @@ a.produkt {
 }
 
 .produkt:hover {
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 4px 8px #ccc;
 }
 
 .produkt img {
@@ -136,13 +139,13 @@ a.produkt {
 
 .produkt h3 {
     margin: 0 0 6px;
-    font-size: 1.1rem;
+    font-size: 18px;
     color: #1f2a44;
 }
 
 .vurdering {
     margin: 0 0 8px;
-    font-size: 0.95rem;
+    font-size: 14px;
 }
 
 .stjerner {
@@ -157,12 +160,20 @@ a.produkt {
 .spesifikasjoner {
     margin: 0 0 12px;
     padding-left: 18px;
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #444;
+}
+
+.spesifikasjoner li {
+    margin-bottom: 6px;
 }
 
 .prisboks {
     margin-top: auto;
+}
+
+.produkt-side-info .prisboks {
+    margin: 15px 0;
 }
 
 .spar {
@@ -177,7 +188,7 @@ a.produkt {
 
 .pris {
     margin: 0;
-    font-size: 2rem;
+    font-size: 30px;
     font-weight: bold;
     color: #1f2a44;
     line-height: 1.1;
@@ -185,14 +196,14 @@ a.produkt {
 
 .forpris {
     margin: 2px 0 0;
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #777;
     text-decoration: line-through;
 }
 
 .lagerstatus {
     margin: 10px 0;
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -216,31 +227,42 @@ a.produkt {
 }
 
 .produkt-side-bilde {
-    flex: 1 1 300px;
-    max-width: 400px;
+    width: 350px;
+    max-width: 100%;
 }
 
 .produkt-side-bilde img {
     width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
     border-radius: 8px;
     border: 1px solid #ddd;
     background-color: #fafafa;
     padding: 20px;
+    display: block;
 }
 
 .produkt-side-info {
-    flex: 1 1 300px;
+    flex: 1;
+    min-width: 280px;
 }
 
 .produkt-side-info h2 {
-    font-size: 1.8rem;
+    font-size: 28px;
     color: #1f2a44;
     margin-bottom: 10px;
 }
 
+.produkt-side-info h3 {
+    margin: 20px 0 10px 0;
+    font-size: 18px;
+    color: #1f2a44;
+}
+
 .beskrivelse {
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.5;
     margin: 15px 0;
     color: #333;
 }
@@ -262,7 +284,12 @@ footer {
         padding: 10px;
     }
 
-    .produktliste {
-        grid-template-columns: 1fr;
+    .produkt {
+        width: 100%;
+    }
+
+    .produkt-side-bilde,
+    .produkt-side-info {
+        width: 100%;
     }
 }

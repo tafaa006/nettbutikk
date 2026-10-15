@@ -92,35 +92,40 @@ for (let i = 0; i < produkter.length; i++) {
 }
 
 let visning = document.getElementById("produktVisning");
+let ikkeFunnet = document.getElementById("ikkeFunnet");
+let bilde = document.getElementById("produktBilde");
+let navn = document.getElementById("produktNavn");
+let stjerner = document.getElementById("produktStjerner");
+let vurdering = document.getElementById("produktVurdering");
+let spar = document.getElementById("produktSpar");
+let pris = document.getElementById("produktPris");
+let forpris = document.getElementById("produktForpris");
+let lager = document.getElementById("produktLager");
+let beskrivelse = document.getElementById("produktBeskrivelse");
+let spesifikasjoner = document.getElementById("produktSpesifikasjoner");
 
 if (valgtProdukt) {
-    let spesifikasjonerHtml = "";
+    bilde.src = valgtProdukt.bilde;
+    bilde.alt = valgtProdukt.navn;
+    navn.textContent = valgtProdukt.navn;
+    stjerner.textContent = valgtProdukt.stjerner;
+    vurdering.textContent = valgtProdukt.vurdering;
+
+    let sparBelop = valgtProdukt.forpris - valgtProdukt.pris;
+    spar.textContent = "SPAR " + sparBelop + " kr";
+
+    pris.textContent = valgtProdukt.pris;
+    forpris.textContent = valgtProdukt.forpris;
+    lager.textContent = "✓ På lager (" + valgtProdukt.lager + " stk)";
+    beskrivelse.textContent = valgtProdukt.beskrivelse;
+
+    spesifikasjoner.textContent = "";
     for (let i = 0; i < valgtProdukt.spesifikasjoner.length; i++) {
-        spesifikasjonerHtml += "<li>" + valgtProdukt.spesifikasjoner[i] + "</li>";
+        let punkt = document.createElement("li");
+        punkt.textContent = valgtProdukt.spesifikasjoner[i];
+        spesifikasjoner.appendChild(punkt);
     }
-
-    let spar = valgtProdukt.forpris - valgtProdukt.pris;
-
-    visning.innerHTML = `
-        <div class="produkt-side">
-            <div class="produkt-side-bilde">
-                <img src="${valgtProdukt.bilde}" alt="${valgtProdukt.navn}">
-            </div>
-            <div class="produkt-side-info">
-                <h2>${valgtProdukt.navn}</h2>
-                <p class="vurdering"><span class="stjerner">${valgtProdukt.stjerner}</span> ${valgtProdukt.vurdering}</p>
-                <div class="prisboks">
-                    <span class="spar">SPAR ${spar} kr</span>
-                    <p class="pris">${valgtProdukt.pris} kr</p>
-                    <p class="forpris">Før ${valgtProdukt.forpris} kr</p>
-                </div>
-                <p class="lagerstatus paa-lager">✓ På lager (${valgtProdukt.lager} stk)</p>
-                <p class="beskrivelse">${valgtProdukt.beskrivelse}</p>
-                <h3>Spesifikasjoner</h3>
-                <ul class="spesifikasjoner">${spesifikasjonerHtml}</ul>
-            </div>
-        </div>
-    `;
 } else {
-    visning.innerHTML = "<p>Fant ikke produktet.</p>";
+    visning.style.display = "none";
+    ikkeFunnet.style.display = "block";
 }

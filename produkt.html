@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <a href="index.html" id="logo" style="text-decoration: none; color: white; padding: 15px 30px;">Pikselbua</a>
+        <a href="index.html" id="logo">Pikselbua</a>
         <nav>
             <a href="index.html#forside">Forside</a>
             <a href="index.html#produkter">Produkter</a>
@@ -20,7 +20,31 @@
     <main>
         <section id="produktdetalj">
             <a href="index.html#produkter" class="knapp-lenke">&larr; Tilbake til produkter</a>
-            <div id="produktVisning"></div>
+
+            <div id="produktVisning" class="produkt-side">
+                <div class="produkt-side-bilde">
+                    <img id="produktBilde" src="" alt="">
+                </div>
+                <div class="produkt-side-info">
+                    <h2 id="produktNavn"></h2>
+                    <p class="vurdering">
+                        <span id="produktStjerner" class="stjerner"></span>
+                        <span id="produktVurdering"></span>
+                    </p>
+                    <div class="prisboks">
+                        <span id="produktSpar" class="spar"></span>
+                        <p class="pris"><span id="produktPris"></span> kr</p>
+                        <p class="forpris">Før <span id="produktForpris"></span> kr</p>
+                    </div>
+                    <p id="produktLager" class="lagerstatus paa-lager"></p>
+                    <a id="produktKjop" href="#">Legg til i handlekurv</a>
+                    <p id="produktBeskrivelse" class="beskrivelse"></p>
+                    <h3>Spesifikasjoner</h3>
+                    <ul id="produktSpesifikasjoner" class="spesifikasjoner"></ul>
+                </div>
+            </div>
+
+            <p id="ikkeFunnet" style="display: none;">Fant ikke produktet.</p>
         </section>
     </main>
 
