@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pikselbua datautstyr</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pikselbua</h1>
+        <nav>
+            <a href="#forside">Forside</a>
+            <a href="#produkter">Produkter</a>
+            <a href="#om-oss">Om oss</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="forside">
+            <h2>Utstyr for deg som elsker data</h2>
+            <p>Pikselbua er en liten nettbutikk for deg som trenger tastatur, mus, skjerm og headset. Enkelt, ryddig og til fornuftige priser.</p>
+            <a class="knapp-lenke" href="#produkter">Se produkter</a>
+        </section>
+
+        <section id="produkter">
+            <h2>Produkter</h2>
+
+            <div class="verktoy">
+                <label for="kategori">Kategori:</label>
+                <select id="kategori">
+                    <option value="alle">Alle</option>
+                    <option value="tilbehør">Tilbehør</option>
+                    <option value="skjerm">Skjerm</option>
+                    <option value="lyd">Lyd</option>
+                </select>
+
+                <label for="sortering">Sorter:</label>
+                <select id="sortering">
+                    <option value="standard">Standard</option>
+                    <option value="lav">Pris: lav til høy</option>
+                    <option value="høy">Pris: høy til lav</option>
+                </select>
+
+                <input type="text" id="sok" placeholder="Søk etter produkt...">
+            </div>
+
+            <div id="produktliste" class="produktliste">
+                <div class="produkt" data-id="1" data-kategori="tilbehør" data-pris="1790">
+                    <img src="bilder/tastatur.jpg" alt="Logitech G PRO X TKL Lightspeed">
+                    <h3>Logitech G PRO X TKL Lightspeed</h3>
+                    <p class="vurdering">
+                        <span class="stjerner">★★★★★</span> 4.8 <span class="antall-vurd">(42)</span>
+                    </p>
+                    <ul class="spesifikasjoner">
+                        <li>LIGHTSPEED trådløs teknologi</li>
+                        <li>GX Brown taktile mekaniske taster</li>
+                        <li>RGB-belysning med LIGHTSYNC</li>
+                    </ul>
+                    <div class="prisboks">
+                        <span class="spar">SPAR 500</span>
+                        <p class="pris">1 790,-</p>
+                        <p class="forpris">Før 2 290,-</p>
+                    </div>
+                    <p class="lagerstatus paa-lager">✓ På lager (5)</p>
+                </div>
+
+                <div class="produkt" data-id="2" data-kategori="tilbehør" data-pris="1590">
+                    <img src="bilder/mus.jpg" alt="Logitech G PRO X Superlight 2">
+                    <h3>Logitech G PRO X Superlight 2</h3>
+                    <p class="vurdering">
+                        <span class="stjerner">★★★★★</span> 4.9 <span class="antall-vurd">(68)</span>
+                    </p>
+                    <ul class="spesifikasjoner">
+                        <li>Ultralett vekt på kun 60 g</li>
+                        <li>HERO 2-sensor opptil 32 000 DPI</li>
+                        <li>Opptil 95 timers batteritid</li>
+                    </ul>
+                    <div class="prisboks">
+                        <span class="spar">SPAR 300</span>
+                        <p class="pris">1 590,-</p>
+                        <p class="forpris">Før 1 890,-</p>
+                    </div>
+                    <p class="lagerstatus paa-lager">✓ På lager (8)</p>
+                </div>
+
+                <div class="produkt" data-id="3" data-kategori="skjerm" data-pris="2490">
+                    <img src="bilder/skjerm.jpg" alt="Samsung Odyssey G5 27&quot; WQHD">
+                    <h3>Samsung Odyssey G5 27" WQHD</h3>
+                    <p class="vurdering">
+                        <span class="stjerner">★★★★★</span> 4.7 <span class="antall-vurd">(53)</span>
+                    </p>
+                    <ul class="spesifikasjoner">
+                        <li>27" WQHD (2560x1440) IPS-panel</li>
+                        <li>165 Hz oppdateringsfrekvens</li>
+                        <li>1 ms responstid og G-Sync kompatibel</li>
+                    </ul>
+                    <div class="prisboks">
+                        <span class="spar">SPAR 800</span>
+                        <p class="pris">2 490,-</p>
+                        <p class="forpris">Før 3 290,-</p>
+                    </div>
+                    <p class="lagerstatus paa-lager">✓ På lager (3)</p>
+                </div>
+
+                <div class="produkt" data-id="4" data-kategori="lyd" data-pris="1490">
+                    <img src="bilder/headset.jpg" alt="HyperX Cloud III Wireless">
+                    <h3>HyperX Cloud III Wireless</h3>
+                    <p class="vurdering">
+                        <span class="stjerner">★★★★★</span> 4.6 <span class="antall-vurd">(37)</span>
+                    </p>
+                    <ul class="spesifikasjoner">
+                        <li>Opptil 120 timers batteritid</li>
+                        <li>53 mm vinklede lydelementer</li>
+                        <li>Avtakbar 10 mm mikrofon med LED-indikator</li>
+                    </ul>
+                    <div class="prisboks">
+                        <span class="spar">SPAR 509</span>
+                        <p class="pris">1 490,-</p>
+                        <p class="forpris">Før 1 999,-</p>
+                    </div>
+                    <p class="lagerstatus paa-lager">✓ På lager (4)</p>
+                </div>
+            </div>
+
+            <p id="ingenTreff" style="display: none;">Fant ingen produkter.</p>
+        </section>
+
+        <section id="om-oss">
+            <article>
+                <h2>Om oss</h2>
+                <p>Pikselbua er et skoleprosjekt. Butikken har ikke ekte produkter eller ekte betaling, men den viser hvordan HTML, CSS og JavaScript fungerer sammen.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pikselbua</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

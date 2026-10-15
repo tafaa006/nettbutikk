@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+header {
+    background-color: #1f2a44;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+#forside {
+    background-color: #e8eefc;
+    text-align: center;
+}
+
+button, .knapp-lenke {
+    background-color: #2f6fed;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .knapp-lenke:hover {
+    background-color: #1d54c4;
+}
+
+.verktoy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.verktoy select, .verktoy input {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.produktliste {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.produkt {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fafafa;
+    text-align: left;
+}
+
+.produkt:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.produkt img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.produkt h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: #1f2a44;
+}
+
+.vurdering {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+}
+
+.stjerner {
+    color: #f5a623;
+    letter-spacing: 1px;
+}
+
+.antall-vurd {
+    color: #777;
+}
+
+.spesifikasjoner {
+    margin: 0 0 12px;
+    padding-left: 18px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.prisboks {
+    margin-top: auto;
+}
+
+.spar {
+    display: inline-block;
+    background-color: #ffd400;
+    color: #1f2a44;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+}
+
+.pris {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2a44;
+    line-height: 1.1;
+}
+
+.forpris {
+    margin: 2px 0 0;
+    font-size: 0.9rem;
+    color: #777;
+    text-decoration: line-through;
+}
+
+.lagerstatus {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.paa-lager {
+    color: #2e7d32;
+}
+
+.utsolgt {
+    color: #c0392b;
+}
+
+footer {
+    background-color: #1f2a44;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .produktliste {
+        grid-template-columns: 1fr;
+    }
+}
