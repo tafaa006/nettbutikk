@@ -110,6 +110,11 @@ button:hover, .knapp-lenke:hover {
     text-align: left;
 }
 
+a.produkt {
+    text-decoration: none;
+    color: inherit;
+}
+
 .produkt:hover {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
@@ -190,6 +195,47 @@ button:hover, .knapp-lenke:hover {
 
 .utsolgt {
     color: #c0392b;
+}
+
+#produktdetalj .knapp-lenke {
+    margin-bottom: 25px;
+}
+
+.produkt-side {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.produkt-side-bilde {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.produkt-side-bilde img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    padding: 20px;
+}
+
+.produkt-side-info {
+    flex: 1 1 300px;
+}
+
+.produkt-side-info h2 {
+    font-size: 1.8rem;
+    color: #1f2a44;
+    margin-bottom: 10px;
+}
+
+.beskrivelse {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #333;
 }
 
 footer {
