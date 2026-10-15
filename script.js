@@ -1,57 +1,54 @@
-const produktliste = document.getElementById("produktliste");
-const kategoriValg = document.getElementById("kategori");
-const sorteringValg = document.getElementById("sortering");
-const sokFelt = document.getElementById("sok");
-const ingenTreff = document.getElementById("ingenTreff");
-const produktKort = Array.from(document.querySelectorAll(".produkt"));
+let produktliste = document.getElementById("produktliste");
+let kategoriValg = document.getElementById("kategori");
+let sorteringValg = document.getElementById("sortering");
+let sokFelt = document.getElementById("sok");
+let ingenTreff = document.getElementById("ingenTreff");
+let kortListe = Array.from(document.querySelectorAll(".produkt"));
 
 function visProdukter() {
-    const kategori = kategoriValg.value;
-    const sokTekst = sokFelt.value.trim().toLowerCase();
-    const sortering = sorteringValg.value;
+    let valgtKategori = kategoriValg.value;
+    let sok = sokFelt.value.toLowerCase();
+    let sortering = sorteringValg.value;
+    let antall = 0;
 
-    let antallSynlige = 0;
+    for (let i = 0; i < kortListe.length; i++) {
+        let kort = kortListe[i];
+        let kategori = kort.dataset.kategori;
+        let tittel = kort.querySelector("h3").textContent.toLowerCase();
 
-    for (let i = 0; i < produktKort.length; i++) {
-        const kort = produktKort[i];
-        const kortKategori = kort.dataset.kategori;
-        const navn = kort.querySelector("h3").textContent.toLowerCase();
+        let riktigKategori = (valgtKategori === "alle" || kategori === valgtKategori);
+        let riktigSok = tittel.includes(sok);
 
-        const matcherKategori = (kategori === "alle" || kortKategori === kategori);
-        const matcherSok = (sokTekst === "" || navn.includes(sokTekst));
-
-        if (matcherKategori && matcherSok) {
+        if (riktigKategori && riktigSok) {
             kort.style.display = "flex";
-            antallSynlige++;
+            antall++;
         } else {
             kort.style.display = "none";
         }
     }
 
-    if (ingenTreff) {
-        if (antallSynlige === 0) {
-            ingenTreff.style.display = "block";
-        } else {
-            ingenTreff.style.display = "none";
-        }
+    if (antall === 0) {
+        ingenTreff.style.display = "block";
+    } else {
+        ingenTreff.style.display = "none";
     }
 
     if (sortering === "lav") {
-        produktKort.sort(function (a, b) {
+        kortListe.sort(function (a, b) {
             return Number(a.dataset.pris) - Number(b.dataset.pris);
         });
     } else if (sortering === "høy") {
-        produktKort.sort(function (a, b) {
+        kortListe.sort(function (a, b) {
             return Number(b.dataset.pris) - Number(a.dataset.pris);
         });
     } else {
-        produktKort.sort(function (a, b) {
+        kortListe.sort(function (a, b) {
             return Number(a.dataset.id) - Number(b.dataset.id);
         });
     }
 
-    for (let i = 0; i < produktKort.length; i++) {
-        produktliste.appendChild(produktKort[i]);
+    for (let i = 0; i < kortListe.length; i++) {
+        produktliste.appendChild(kortListe[i]);
     }
 }
 
